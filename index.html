@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta name="google-site-verification" content="ftFOlJETX-2KNjaPh8W6s8lhigItRuu9fOmjHZZ0nY0" />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>MTL-Tacotron</title>
+</head>
+<style type="text/css">
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  audio {
+    width: 100%;
+  }
+
+  thead>tr>th:first-child {
+    width: 96px;
+  }
+
+  @media (max-width: 767px) {
+    .big-screen {
+      display: none;
+    }
+  }
+
+  @media (min-width: 767px) {
+    .small-screen {
+      display: none;
+    }
+  }
+</style>
+
+
+
+
+<body>
+  <header class="header">
+    <div class="jumbotron bg-secondary text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+ 
+            <h1><a class="text-light">Modeling Prosodic Phrasing with Multi-Task Learning <br> in Tacotron-based TTS</h1><br> 
+             <font size=5><span style="color:#000000"> Authors: Rui Liu<sup>1,2</sup>, Berrak Sisman<sup>2</sup>,  Feilong Bao<sup>1</sup>,Guanglai Gao<sup>1</sup>,Haizhou Li<sup>2</sup> </font><font size=4> <br>  <sup>1</sup>Inner Mongolia University, China   <sup>2</sup>National University of Singapore, Singapore</font>  </a>   
+            <p>
+              <div class="row">
+              </div>
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row" id="result">
+        <div class="col-md-12">
+          <div  align="center"><img src="model.jpg"  width="1100" height="350"  /></div>
+           <div  align="center"><img src="baseline.jpg"  width="540" height="380"   /></div>
+
+                  <div class="big-screen">
+                    <br /><br />
+<h4><font size=3 color='red'>** Note: These samples are synthesized from Mel-spectrum by Griffin-Lim algorithm. We just need to pay attention to prosody because this work has no relation with sound quality basically.</font></h4>
+
+                     <!--   <b><br>Tacotron</b>: Tacotron model <br>
+
+
+    <b>PE-Tacotron</b>: PE and input character embeddings (CE_i) are added together and the PE are extracted by pretrained prosody generater. <br>
+
+
+    <b>MTL-Tacotron</b>: PE and output character embeddings (CE_o) are added together and the PE are extracted by prosody generater (secondary task) which is jointly training with the Tacotron model (main task). --><br><br>
+                    <br />
+                    <br />
+                     <h2>----------------------->   Mandarin Speech Samples   <---------------------</h2>
+                     <br /><br />
+                    <!--  Naturalness Evaluation -->
+                    <table class="table">
+                      
+                      <tbody>
+                                
+                                
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align:center;">   Tacotron</th>
+                                    <th style="text-align:center;">   WE-Tacotron</th>
+                                    <th style="text-align:center;">   PE-Tacotron</th>
+                                    <th style="text-align:center;">   MTL-Tacotron</th>
+                          
+                                </tr>
+                                <!-- single sentence -->
+                                <tr>
+                                   <th colspan=5 align="center"> [1] 来自以色列方面 <font color='red'>|</font> 有关 <font color='red'>|</font> 阿萨德 <font color='red'>|</font> 身体状况 <font color='red'>|</font> 恶化的消息 </th>
+                                </tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/T/071.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/WE-T/071.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/PE-T/071.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/MTL-T/071.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+
+
+                                <!-- single sentence -->
+                                <tr>
+                                   <th colspan=5 align="center"> [2] 大力发展 <font color='red'>|</font> 教育事业 <font color='red'>|</font> 提高 <font color='red'>|</font> 人类素质 </th>
+                                </tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/T/145.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/WE-T/145.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/PE-T/145.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/MTL-T/145.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+                                <!-- single sentence -->
+                                <tr>
+                                   <th colspan=5 align="center">[3] 参加 <font color='red'>|</font> 伦敦 <font color='red'>|</font> 至北京 <font color='red'>|</font> 老爷车拉力赛的选手们 <font color='red'>|</font> 已做好 <font color='red'>|</font> 一切准备 </th>
+                                </tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/T/166.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/WE-T/166.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/PE-T/166.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/MTL-T/166.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+                                <!-- single sentence -->
+                                <tr>
+                                   <th colspan=5 align="center"> [4] 谁会傻到 <font color='red'>|</font> 花十八万元 <font color='red'>|</font> 购买一种 <font color='red'>|</font> 在正常情况下 <font color='red'>|</font> 只要十万元的 <font color='red'>|</font> 消费品呢 </th>
+                                </tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/T/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/WE-T/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/PE-T/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/MTL-T/176.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+                               
+
+
+                               <!-- single sentence -->
+                                <tr>
+                                  <th colspan=5 align="left"> [5] 从 <font color='red'>|</font> 单纯承包工业项目 <font color='red'>|</font> 到拓宽工业项目 <font color='red'>|</font> 和土木工程项目 <font color='red'>|</font> 并举发展</th>
+
+                                </tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="cn-sample/T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/WE-T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/PE-T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="cn-sample/MTL-T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+
+                      </tbody>
+                    </table>
+
+
+                    <br /><br />
+                    <!--  English Speech Samples-->
+                    <h2>----------------------->   Mongolian Speech Samples   <--------------------</h2>
+                    <br /><br />
+                    <!--  Naturalness Evaluation -->
+                    <table class="table">
+                      
+                      <tbody>
+                                
+                                
+                                <tr>
+                                    <th></th>
+                                    <th style="text-align:center;">   Tacotron</th>
+                                    <th style="text-align:center;">   WE-Tacotron</th>
+                                    <th style="text-align:center;">   PE-Tacotron</th>
+                                    <th style="text-align:center;">   MTL-Tacotron</th>
+                          
+                          
+                                </tr>
+                                <!-- single sentence -->
+                               <tr>
+                                 <th colspan=5 align="left">  [1] <img src="mon-sample/1.png"  width="880" height="37" / ></th>
+                                 <tr><th colspan=5 align="left"><b>Latin:</b> gvW_a saihan-v homujil bwl gwwldagv <font color='red'>|</font> gvW_a saihan hereg bwdas-vn seren medereju bwlhviqa <font color='red'>|</font> bwdatai duri-ber damjigvlvn homus-i nologeledeg</th></tr>
+                                </tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/T/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/WE-T/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/PE-T/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/MTL-T/1.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                                <!-- single sentence -->
+ <!-- single sentence -->
+                               <tr>
+                                 <th colspan=5 align="left">[2] <img src="mon-sample/2.png"  width="710" height="33" / ></th>
+                                </tr>
+                                <tr><th colspan=5 align="left"><b>Latin:</b> ene yabvdal-vn job bvrvgv gajigv xilvgvn-v tvhai jwhiyagqi <font color='red'>|</font> dvr_a-bar-iyan xigumjiley_e geju bwdwhv ugei</th></tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/T/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/WE-T/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/PE-T/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/MTL-T/2.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                <!-- single sentence -->
+                                 <!-- single sentence -->
+                               <tr>
+                                 <th colspan=5 align="left"> [3] <img src="mon-sample/3.png"  width="820" height="32" / ></th>
+                                </tr>
+                                 <tr><th colspan=5 align="left"><b>Latin:</b> geju dab hin bwshv-dv haraNgvi-yin dvmda haltar nwhai ni eNger-eqe ni jagvjv <font color='red'>|</font> hwixi vhvrin tatajv bail_a</th></tr>
+
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/WE-T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/PE-T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/MTL-T/3.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                   <!-- single sentence -->
+                               <tr>
+                                 <th colspan=5 align="left"> [4] <img src="mon-sample/4.png"  width="900" height="30" / ></th>
+                                </tr>
+                                 <tr><th colspan=5 align="left"><b>Latin:</b> ay_a eimu saihan heuhen-iyer ehener-iyen hihu <font color='red'>|</font> homun-i hwrW_a-yin gajar hagan ejen-eqe ileguu jirgal-tai geju helebequ bwlvn_a d'a</th></tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/T/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/WE-T/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/PE-T/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/MTL-T/4.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+
+                                   <!-- single sentence -->
+                               <tr>
+                                 <th colspan=5 align="left">[5]<img src="mon-sample/5.png"  width="1050" height="32" / ></th>
+                                </tr>
+                                 <tr><th colspan=5 align="left"><b>Latin:</b> gwyw saihan alhvqa-bar man-v emun_e twglan twglan man-i ergiju haradag ba <font color='red'>|</font> vrtv hwyar qihi-ben serteilgen man-i xirten ajigladag</th></tr>
+                                <tr>
+                                  <th scope="row">    </th>
+                                 <td>
+                                    <audio controls>
+                                      <source src="mon-sample/T/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/WE-T/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/PE-T/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  <td>
+                                    <audio controls>
+                                      <source src="mon-sample/MTL-T/5.wav" type="audio/wav" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </td>
+                                  
+                                  </tr>
+                      </tbody>
+                    </table>
+
+
+
+
+
+                  </div>
+                 
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="ref">
+        <div class="col">
+          <!--<h2>References</h2>
+          
+         -->
+        </div>
+      </div>
+      <hr>
+      <!-- <div class="row" id="contact">
+          <div class="col">
+            <h2>Contact</h2>
+            <div></div>
+          </div>
+        </div> -->
+    </div>
+  </main>
+  <footer class="bg-secondary text-light mt-4 pt-3 pb-2 ">
+    <div class="container">
+      <p class="text-center">
+        
+      </p>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
