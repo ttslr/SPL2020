@@ -10,4 +10,4 @@ Examples of synthesized speech by "__Tacotron__" , "__WE-Tacotron__", "__PE-Taco
 Speech samples are available at [speech samples page](https://ttslr.github.io/SPL2020/).
 
 
-** **_Note: These samples are synthesized from Mel-spectrum by Griffin-Lim algorithm. We just need to pay attention to prosody because this work has no relation with sound quality basically._**
+** **_Note: All speech samples are synthesized from Mel-spectrum by Griffin-Lim algorithm. Please only pay attention to the prosodic phrasing because this work is focused on prosody generation, it doesn’t aim to improve the voice quality_**
