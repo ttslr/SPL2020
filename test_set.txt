@@ -199,4 +199,5 @@ sentences = [
 'bi3 ru2 mian3 chu2 jin4 ru4 gao1 ke1 ji4 yuan2 qu1 de5 gong1 si1 jin4 chu1 kou3 ruan3 jian4 de5 shuang1 chong2 fu4 shui4',
 'bu4 shao3 guo4 wang3 che1 liang4 de5 liang3 ce4 huo4 hou4 mian5 de5 bo1 li5 chuang1 shang4 tie1 shang4 le5 a1 sa4 de2 de5 hua4 xiang4',
 'gan4 bu4 zhi1 fu4 zhu4 zhai2 dian4 nao3 shang4 wang3 fei4 yong5 shi4 zuo4 wei2 ling2 dao3 gan4 bu4 bi4 xu1 yan2 ge2 zun1 shou3 de5 yi4 tiao2 gui1 ding4',
+'cong2 dan1 chun2 cheng2 bao1 gong1 ye4 xiang4 mu4 dao4 tuo4 kuan1 gong1 ye4 xiang4 mu4 he2 tu3 mu4 gong1 cheng2 xiang4 mu4 bing4 ju3 fa1 zhan3',
 ]
