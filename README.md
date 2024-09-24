@@ -4,6 +4,9 @@
 
 Authors: Rui Liu, Berrak Sisman, Feilong Bao, Guanglai Gao, Haizhou Li.
 
+This paper was accepted by **IEEE Signal Processing Letters, 2020**.
+
+
 ## Audio samples
 
 Examples of synthesized speech by "__Tacotron__" , "__WE-Tacotron__", "__PE-Tacotron__" and "__MTL-Tacotron__"system.
